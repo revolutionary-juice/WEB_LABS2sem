@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/data.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/main.js"></script>
+    <title>
+        Видеоигры
+    </title>
+</head>
+<body background="res/bg.jpg">
+    <p><a href="ex3.3.html" target="_self"> <input type="button" value="Самая популярная видеоигра"></a>
+    <a href="ex3.1.html" target="_self"> <input type="button" value="На главную"></a></p>
+
+    <div class="parameters">
+    <details>
+        <summary> График </summary>
+        <table cellspacing="20">
+            <tr>
+                <td>Значение по оси ОХ</td>
+                <td>Результат</td>
+            </tr>
+            <tr>
+                <td>
+                    <form>
+                        <input type="radio" name="val_1" value="genre"> Жанр <br>
+                        <input type="radio" name="val_1" value="platform"> Платформа <br>
+                        <input type="radio" name="val_1" value="year"> Год
+                    </form>
+                </td>
+
+                <td>
+                    <input type="checkbox" name="val_2" value="genre"> Жанр <br>
+                    <input type="checkbox" name="val_2" value="platform"> Платформа <br>
+                    <input type="checkbox" name="val_2" value="year"> Год
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Построить">
+        <p>
+            здесь будет график
+        </p>
+    </details>
+    <br>
+
+    <details>
+        <summary> Фильтр </summary>
+        <form>
+            <p>
+                Название:
+                <input type="text" name="title">
+            </p>
+
+            <p>
+                Платформа:
+                <input type="text" name="platform">
+            </p>
+
+            <p>
+                Жанр:
+                <input type="text" name="genre">
+            </p>
+
+            <p>
+                Год: от
+                <input type="text" name="yearFrom">
+                до
+                <input type="text" name="yearTo">
+
+            </p>
+            <p>
+                Рейтинг: от
+                <input type="text" name="ratingFrom">
+                до
+                <input type="text" name="ratingTo">
+            </p>
+
+            <p>
+                Обновление: от
+                <input type="text" name="updateFrom">
+                до
+                <input type="text" name="updateTo">
+            </p>
+
+            <p>
+                Ср. продолжительность: от
+                <input type="text" name="gameplayFrom">
+                до
+                <input type="text" name="gameplayTo">
+            </p>
+
+            <p>
+                Игроки: от
+                <input type="text" name="playersFrom">
+                до
+                <input type="text" name="playersTo">
+            </p>
+
+            <input type="button" value="Найти" id="filterButton">
+            <input type="button" value="Очистить фильтры" onclick="clearFilter(this.form)">
+        </form>
+    </details>
+    <br>
+
+    <details>
+        <summary> Сортировка </summary>
+        <form id="sort">
+            <p>
+                Первый уровень:
+                <select id="firstLevel">
+                </select>
+                по убыванию?
+                <input type="checkbox" id="firstLevelDesc">
+            </p>
+
+            <p>
+
+                Второй уровень:
+                <select id="secondLevel">
+                </select>
+                по убыванию?
+                <input type="checkbox" id="secondLevelDesc">
+
+            </p>
+
+            <p>
+                Третий уровень:
+                <select id="thirdLevel">
+                </select>
+                по убыванию?
+                <input type="checkbox" id="thirdLevelDesc">
+            </p>
+
+            <input type="button" value="Сортировать" id="sortButton">
+        </form>
+    </details>
+    </div>
+    <div class="main-table">
+
+        <table id="list">
+
+        </table>
+
+    </div>
+</body>

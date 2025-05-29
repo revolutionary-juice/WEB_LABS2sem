@@ -1,0 +1,40 @@
+body {
+    color: #210085;
+}
+
+.error {
+    border: 2px solid red;
+    background: #80202080;
+}
+
+.parameters {
+    background: #90b4c6F0;
+    border: #445566FF 3px solid;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.main-table {
+    background: #90b4c6F0;
+    border: #445566FF 3px solid;
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+
+    box-sizing: border-box;
+
+    table {
+        border: 1px solid black;
+        padding: 3px;
+        width: 100%;
+
+        border-spacing: 3px;
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+
+    }
+}
