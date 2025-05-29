@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор комплексных чисел</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <div class="calculator">
+        <form id="complexForm">
+            <div id="formSelection">
+                <label><input type="radio" name="formType" value="algebraic" checked>Алгебраическая форма</label><br>
+                <label><input type="radio" name="formType" value="exponential">Показательная форма</label><br>
+                <input type="button" value="Показать" onClick="showInputs()">
+            </div>
+            <div id="inputFields">
+                
+            </div>
+            <div id="operations">
+                <p>Выберите операции:</p>
+                <label><input type="checkbox" name="operation" value="argument">Аргумент числа</label><br>
+                <label><input type="checkbox" name="operation" value="imaginary">Мнимая часть</label><br>
+                <label><input type="checkbox" name="operation" value="modulus">Модуль числа</label><br>
+                <label><input type="checkbox" name="operation" value="convert">Представление в других формах</label><br>
+            </div>
+            <input type="button" value="Вычислить" onClick="calculate()">
+            <input type="button" value="Очистить" onClick="resetForm()">
+        </form>
+        <div id="output"></div>
+    </div>
+    <script src="js/program.js"></script>
+</body>
+</html>

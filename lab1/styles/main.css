@@ -1,0 +1,44 @@
+.calculator {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    width: 300px;
+}
+
+.error {
+    border: 2px solid red;
+}
+
+p.error {
+    color: red;
+    font-weight: bold;
+}
+
+#operations.error {
+    border: 2px solid red;
+    padding: 10px;
+    display: inline-block;
+}
+
+input[type="number"] {
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+#operations {
+    margin-top: 20px;
+}
+
+#output {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+#formSelection label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#formSelection input[type="radio"] {
+    margin-right: 10px;
+}
