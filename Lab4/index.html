@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="http://d3js.org/d3.v7.min.js"> </script>
+    <script src="js/data.js"></script>
+    <script src="js/table.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/graph.js"></script>
+    <title>
+        Видеоигры
+    </title>
+</head>
+<body background="res/bg.jpg">
+    <p><a href="ex3.3.html" target="_self"> <input type="button" value="Самая популярная видеоигра"></a>
+    <a href="ex3.1.html" target="_self"> <input type="button" value="На главную"></a></p>
+
+    <div class="parameters">
+    <details open>
+        <summary> График </summary>
+        <form id="graph">
+            <div class="row">
+                <div class="column">
+                    <h4>Значение по оси ОХ</h4>
+                    <div>
+                        <input type="radio" name="xvalue" value="title" checked>
+                        <label>Название игры</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="xvalue" value="genre">
+                        <label>Жанр</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="xvalue" value="year">
+                        <label>Год создания</label>
+                    </div>
+                </div>
+                <div class="column">
+                    <h4>Результат</h4>
+                    <div>
+                        <input type="checkbox" name="yvalue" value="rating">
+                        <label>Рейтинг</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="yvalue" value="gameplay">
+                        <label>Ср. продолжительность</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="yvalue" value="players">
+                        <label>Количество игроков</label>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                Тип диаграммы:
+                <select id="diaType">
+                    <option value="point">Точечная</option>
+                    <option value="line">График</option>
+                    <option value="bar">Столбчатый</option>
+                </select>
+            </div>
+
+            <input type="button" value="Построить" onclick="buildGraph(this.form)">
+            <svg>
+
+            </svg>
+        </form>
+    </details>
+    <br>
+
+    <details>
+        <summary> Фильтр </summary>
+        <form>
+            <p>
+                Название:
+                <input type="text" name="title">
+            </p>
+
+            <p>
+                Платформа:
+                <input type="text" name="platform">
+            </p>
+
+            <p>
+                Жанр:
+                <input type="text" name="genre">
+            </p>
+
+            <p>
+                Год: от
+                <input type="text" name="yearFrom">
+                до
+                <input type="text" name="yearTo">
+
+            </p>
+            <p>
+                Рейтинг: от
+                <input type="text" name="ratingFrom">
+                до
+                <input type="text" name="ratingTo">
+            </p>
+
+            <p>
+                Обновление: от
+                <input type="text" name="updateFrom">
+                до
+                <input type="text" name="updateTo">
+            </p>
+
+            <p>
+                Ср. продолжительность: от
+                <input type="text" name="gameplayFrom">
+                до
+                <input type="text" name="gameplayTo">
+            </p>
+
+            <p>
+                Игроки: от
+                <input type="text" name="playersFrom">
+                до
+                <input type="text" name="playersTo">
+            </p>
+
+            <input type="button" value="Найти" id="filterButton">
+            <input type="button" value="Очистить фильтры" onclick="clearFilter(this.form)">
+        </form>
+    </details>
+    <br>
+
+    <details>
+        <summary> Сортировка </summary>
+        <form id="sort">
+            <p>
+                Первый уровень:
+                <select id="firstLevel">
+                </select>
+                по убыванию?
+                <input type="checkbox" id="firstLevelDesc">
+            </p>
+
+            <p>
+
+                Второй уровень:
+                <select id="secondLevel">
+                </select>
+                по убыванию?
+                <input type="checkbox" id="secondLevelDesc">
+
+            </p>
+
+            <p>
+                Третий уровень:
+                <select id="thirdLevel">
+                </select>
+                по убыванию?
+                <input type="checkbox" id="thirdLevelDesc">
+            </p>
+
+            <input type="button" value="Сортировать" id="sortButton">
+        </form>
+    </details>
+    </div>
+    <div class="main-table">
+
+        <table id="list">
+
+        </table>
+
+    </div>
+</body>
